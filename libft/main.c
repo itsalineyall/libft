@@ -6,7 +6,7 @@
 /*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 11:12:53 by alvieira          #+#    #+#             */
-/*   Updated: 2023/04/27 16:58:12 by alvieira         ###   ########.fr       */
+/*   Updated: 2023/04/27 18:13:53 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -339,11 +339,31 @@ int	main(void)
 	printf("%s\nft_strnstr%s\n", YELLOW, RESET);
 	printf("%sProcura a primeira ocorrência de uma substring em uma string, com um limite máximo de caracteres a serem comparados.%s\n", ITALIC, RESET);
 
-	printf("char *ft_strnstr(const char *%s%s%s, int %s%i%s, size_t %s%lu%s)\n\n", CIANO, string, RESET, CIANO, d1, RESET, CIANO, teste, RESET);
 
-		
+    const char *ss1 = "O rato roeu a roupa do rei de Roma";
+    const char *ss2 = "roupa";
+    size_t nn2 = 20;
+
+	printf("char *ft_strnstr(const char *%s%s%s, const char %s%s%s, size_t %s%lu%s)\n\n", CIANO, ss1, RESET, CIANO, ss2, RESET, CIANO, nn2, RESET);
+
+    printf("String 1: %s\n", ss1);
+    printf("String 2: %s\n", ss2);
+    printf("Número de caracteres a procurar: %lu\n", nn2);
+
+    // char *result00 = strnstr(ss1, ss2, nn2);
+    char *result01 = ft_strnstr(ss1, ss2, nn2);
+
+    // printf("Resultado (original): %s\n", result00);
+    printf("Resultado (minha versão): %s\n", result01);
+
+    // if (result00 == NULL && result01 == NULL) {
+    //     printf("%sYeah! Os resultados são iguais!%s\n\n", GREEN, RESET);
+    // } else if (result00 != NULL && result01 != NULL && strcmp(result00, result01) == 0) {
+    //     printf("%sYeah! Os resultados são iguais!%s\n\n", GREEN, RESET);
+    // } else {
+    //     printf("%sOops :( Os resultados são diferentes.%s\n\n", RED, RESET);
+    // }
 	}
-
 	return (0);
 }
-	
+
