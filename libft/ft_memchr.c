@@ -6,7 +6,7 @@
 /*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 17:35:33 by alvieira          #+#    #+#             */
-/*   Updated: 2023/04/26 23:46:06 by alvieira         ###   ########.fr       */
+/*   Updated: 2023/04/29 16:09:33 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 // para a primeira ocorrência do valor encontrado. Se o valor
 // não for encontrado, a função retorna NULL. 
 
-void *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	const unsigned char	*s2;
 	unsigned char		ch;
@@ -30,13 +30,11 @@ void *ft_memchr(const void *s, int c, size_t n)
 	s2 = (const unsigned char *)s;
 	ch = (unsigned char) c;
 	i = 0;
-
 	while (i < n)
 	{
 		if (s2[i] == ch)
-		return ((void *)&s2[i]);
+			return ((void *)&s2[i]);
 		i++;
 	}
 	return (NULL);
-
 }

@@ -6,7 +6,7 @@
 /*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 23:38:41 by alvieira          #+#    #+#             */
-/*   Updated: 2023/04/27 00:36:18 by alvieira         ###   ########.fr       */
+/*   Updated: 2023/04/29 16:41:50 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	p1 = (const unsigned char *)s1;
 	p2 = (const unsigned char *)s2;
 	i = 0;
-
 	while (i < n)
 	{
 		if (p1[i] != p2[i])

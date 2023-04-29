@@ -6,7 +6,7 @@
 /*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 23:58:12 by alvieira          #+#    #+#             */
-/*   Updated: 2023/04/26 23:30:51 by alvieira         ###   ########.fr       */
+/*   Updated: 2023/04/29 16:45:45 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ char	*ft_strrchr(const char *s, int c)
 			return ((char *)&s[j]);
 		j--;
 	}
-	return (NULL);		
+	return (NULL);
 }

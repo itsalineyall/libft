@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alinevieira <alinevieira@student.42.fr>    +#+  +:+       +#+        */
+/*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 11:12:53 by alvieira          #+#    #+#             */
-/*   Updated: 2023/04/29 15:36:04 by alinevieira      ###   ########.fr       */
+/*   Updated: 2023/04/29 16:02:35 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -369,23 +369,25 @@ int	main(void)
 	printf("%s\nft_atoi%s\n", YELLOW, RESET);
 	printf("%sTransforma string num inteiro.%s\n", ITALIC, RESET);
 
-	const char *teste500 = "-7654ggh7";
-    printf("String: %s", teste500);
+	const char *teste500 = "   +2147483648";
+	printf("int	atoi(const char %s%s%s\n\n", CIANO, teste500, RESET);
+	
+    printf("String: %s\n", teste500);
 
     // convertendo a string usando a função ft_atoi
-    int ft_result = ft_atoi("-7654ggh7");
+    int ft_result = ft_atoi(teste500);
 
     // convertendo a string usando a função atoi original
-    int original_result = atoi("-7654ggh7");
+    int original_result = atoi(teste500);
 
-	printf("Original = %i", original_result);
-	printf("Minha Versao = %i", ft_result);
+	printf("Original = %i\n", original_result);
+	printf("Minha Versao = %i\n", ft_result);
 
     // comparando os resultados
     if (ft_result == original_result) {
-        printf("%sA função ft_atoi funciona corretamente!%s\n", GREEN, RESET);
+        printf("%sYeah! Os resultados são iguais!%s\n\n", GREEN, RESET);
     } else {
-        printf("A função ft_atoi não funciona corretamente.\n");
+        printf("%sOops :( Os resultados são diferentes.%s\n\n", RED, RESET);
     }
 	}
 	return (0);
