@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alinevieira <alinevieira@student.42.fr>    +#+  +:+       +#+        */
+/*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 17:32:02 by alvieira          #+#    #+#             */
-/*   Updated: 2023/04/29 11:48:23 by alinevieira      ###   ########.fr       */
+/*   Updated: 2023/04/30 00:40:04 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <ctype.h>
 
 # define YELLOW "\033[1;33m" // vai negrito tbm
-# define RESET "\033[0m" // 
+# define RESET "\033[0m" // vai resetar para a cor original
 # define ITALIC "\033[3m\033[36m" // vai deixar italico e azul
 # define BLUE "\033[0;34m" // vai deixar azul
 # define GREEN "\033[32m" // vai deixar verde
@@ -49,5 +49,9 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 int     ft_atoi(const char *nptr);
+
+// parte 2
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char    *ft_strjoin(const char *s1, const char *s2);
 
 #endif

@@ -26,6 +26,6 @@ tclean: clean
 re: fclean all
 
 teste: re
-	${COMP} ${FLAGS} ${INCLUDE} main.c ${NAME} -o teste
+	${COMP} ${FLAGS} ${INCLUDE} main.c ${NAME} -o libft
 
 .PHONY: all clean fclean tclean re teste

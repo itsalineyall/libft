@@ -6,7 +6,7 @@
 /*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 11:12:53 by alvieira          #+#    #+#             */
-/*   Updated: 2023/04/29 16:02:35 by alvieira         ###   ########.fr       */
+/*   Updated: 2023/04/29 23:22:35 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,32 @@
 
 int	main(void)
 {
+	
+	int	num;
+	printf("Please, insert:\n%s(1)%s for libft part 1\n%s(2)%s for libft part 2\n", CIANO, RESET, CIANO, RESET);
+	scanf("%i", &num);
+
+	//PARTE 1
+	if (num == 1){
+	
 	{//ft_strlen
 	printf("%s\nft_strlen%s\n", YELLOW, RESET);
 	printf("%sRetorna o tamanho de uma string\n%s", ITALIC, RESET);
 	
 	const char *str1 = "Hello, world!";
-    size_t len = ft_strlen(str1);
+	size_t len = ft_strlen(str1);
 	
 	printf("size_t	ft_strlen(const char %s%s%s)\n\n", CIANO, str1, RESET);
-    printf("Original: %lu\n", strlen(str1));
+	printf("Original: %lu\n", strlen(str1));
 	printf("Minha: %lu\n\n", len);
-	}
+}
 
 	{//ft_strlcat
 	printf("%s\nft_strlcat%s\n", YELLOW, RESET);
 	printf("%sConcatena duas strings em um buffer de destino (maximo n-1) e retorna o tamanho total da string resultante.\n%s", ITALIC, RESET);
 
-    char    a[20] = "azul";
-    const char    b[] = "verde";
+	char    a[20] = "azul";
+	const char    b[] = "verde";
 	size_t	size = 8;
 	
 	printf("size_t	ft_strlcpy(char %s%s%s, const char %s%s%s, size_t %s%lu%s)\n\n", CIANO, a, RESET, CIANO, b, RESET, CIANO, size, RESET);
@@ -128,112 +136,112 @@ int	main(void)
 
 	{//ft_memcpy
 	printf("%s\nft_memcpy%s\n", YELLOW, RESET);
-    printf("%sPermite copiar uma região de memória de uma área para outra\n%s", ITALIC, RESET);
-    
+	printf("%sPermite copiar uma região de memória de uma área para outra\n%s", ITALIC, RESET);
+	
 	size_t gu = 3 * sizeof(char);
-    char ptr5[] = "Hello, world!";
+	char ptr5[] = "Hello, world!";
 	char ptr7[] = "Hello, world!";
-    
+	
 	printf("void *ft_memcpy(void %s%s%s, const void %s%s%s, size_t %s%lu%s)\n\n", 
-   	CIANO, ptr5 + 3, RESET, CIANO, ptr5, RESET, CIANO, gu, RESET);
+	CIANO, ptr5 + 3, RESET, CIANO, ptr5, RESET, CIANO, gu, RESET);
 	
 	printf("Frase: %s\n", ptr7);
 	
 	memcpy(ptr7 + 3, ptr7, gu);
-    ft_memcpy(ptr5 + 3, ptr5, gu);
+	ft_memcpy(ptr5 + 3, ptr5, gu);
 	
 	printf("Original: %s\n", ptr7);
-    printf("Minha %s\n\n", ptr5);
+	printf("Minha %s\n\n", ptr5);
 	}
 
 	{//ft_memmove
 	printf("%s\nft_memmove%s\n", YELLOW, RESET);
-    printf("%sPermite copiar uma região de memória para outra, mesmo se as regiões se sobrepõem\n%s", ITALIC, RESET);
+	printf("%sPermite copiar uma região de memória para outra, mesmo se as regiões se sobrepõem\n%s", ITALIC, RESET);
 
-    size_t gh = 3;
-    unsigned char pointer1[] = "Hello, world!";
+	size_t gh = 3;
+	unsigned char pointer1[] = "Hello, world!";
 	unsigned char pointer2[] = "Hello, world!";
 
-    printf("void *ft_memmove(void *%s%s%s, const void *%s%s%s, size_t %s%lu%s)\n\n", CIANO, pointer1 + 3, RESET, CIANO, pointer1, RESET, CIANO, gh, RESET);
+	printf("void *ft_memmove(void *%s%s%s, const void *%s%s%s, size_t %s%lu%s)\n\n", CIANO, pointer1 + 3, RESET, CIANO, pointer1, RESET, CIANO, gh, RESET);
 
 	printf("src: %s\n", pointer1);
-    memmove(pointer1 + 3, pointer1, gh);
+	memmove(pointer1 + 3, pointer1, gh);
 	ft_memmove(pointer2 + 3, pointer2, gh);
 
-    printf("dest (original): %s\n", pointer1);
+	printf("dest (original): %s\n", pointer1);
 	printf("dest (minha): %s\n", pointer2);
 
-    if (memcmp(pointer2, pointer1, sizeof(pointer2)) == 0) {
-        printf("%sYeah! Estao iguais!%s\n\n", GREEN, RESET);
-    } else {
-        printf("\n%sOops :( Estao diferentes.%s\n\n", RED, RESET);
-    }
+	if (memcmp(pointer2, pointer1, sizeof(pointer2)) == 0) {
+		printf("%sYeah! Estao iguais!%s\n\n", GREEN, RESET);
+	} else {
+		printf("\n%sOops :( Estao diferentes.%s\n\n", RED, RESET);
+	}
 	}
 
 	{//ft_toupper
-	    printf("%s\nft_toupper%s\n", YELLOW, RESET);
-    printf("%sPermite converter um caractere para maiúsculo, se ele for uma letra minúscula\n%s", ITALIC, RESET);
+		printf("%s\nft_toupper%s\n", YELLOW, RESET);
+	printf("%sPermite converter um caractere para maiúsculo, se ele for uma letra minúscula\n%s", ITALIC, RESET);
 
-    unsigned char c1 = 'a';
+	unsigned char c1 = 'a';
 
 	printf("int	ft_toupper(int %sa (%i)%s)\n\n", CIANO, c1, RESET);
 
-    int result1 = toupper(c1);
-    int result2 = ft_toupper(c1);
+	int result1 = toupper(c1);
+	int result2 = ft_toupper(c1);
 	
-    printf("Original: %i\n", result1);
-    printf("Minha: %i\n", result2);
+	printf("Original: %i\n", result1);
+	printf("Minha: %i\n", result2);
 
-    if (result1 == result2) {
-        printf("%sYeah! Os resultados são iguais!%s\n\n", GREEN, RESET);
-    } else {
-        printf("\n%sOops :( Os resultados são diferentes.%s\n\n", RED, RESET);
-    }
+	if (result1 == result2) {
+		printf("%sYeah! Os resultados são iguais!%s\n\n", GREEN, RESET);
+	} else {
+		printf("\n%sOops :( Os resultados são diferentes.%s\n\n", RED, RESET);
+	}
 	}
 	
 	{//ft_tolower
 	printf("%s\nft_tolower%s\n", YELLOW, RESET);
-    printf("%sPermite converter um caractere para minúsculo, se ele for uma letra maiúscula\n%s", ITALIC, RESET);
+	printf("%sPermite converter um caractere para minúsculo, se ele for uma letra maiúscula\n%s", ITALIC, RESET);
 
-    unsigned char c1 = 'B';
+	unsigned char c1 = 'B';
 
 	printf("int	ft_tolower(int %sB (%i)%s)\n\n", CIANO, c1, RESET);
 
-    int result1 = tolower(c1);
-    int result2 = ft_tolower(c1);
+	int result1 = tolower(c1);
+	int result2 = ft_tolower(c1);
 	
-    printf("Original: %i\n", result1);
-    printf("Minha: %i\n", result2);
+	printf("Original: %i\n", result1);
+	printf("Minha: %i\n", result2);
 
-    if (result1 == result2) {
-        printf("%sYeah! Os resultados são iguais!%s\n\n", GREEN, RESET);
-    } else {
-        printf("%sOops :( Os resultados são diferentes.%s\n\n", RED, RESET);
-    }
+	if (result1 == result2) {
+		printf("%sYeah! Os resultados são iguais!%s\n\n", GREEN, RESET);
+	} else {
+		printf("%sOops :( Os resultados são diferentes.%s\n\n", RED, RESET);
+	}
 	}
 	
 	{//ft_strchr
 	printf("%s\nft_strchr%s\n", YELLOW, RESET);
-    printf("%sBusca a primeira ocorrência de um caractere em uma string e retorna um ponteiro com esta posicao\n%s", ITALIC, RESET);
+	printf("%sBusca a primeira ocorrência de um caractere em uma string e retorna um ponteiro com esta posicao\n%s", ITALIC, RESET);
 
-    const char *s = "Bom dia, malta!";
-    int c5 = 257;
+	const char *s = "Bom dia, malta!";
+	int c5 = 257;
 
 	printf("char *ft_strchr(const char *%s%s%s, int %s%i%s)\n\n", CIANO, s, RESET, CIANO, c5, RESET);
 	
-    char *result1 = strchr(s, c5);
-    char *result2 = ft_strchr(s, c5);
+	char *result1 = strchr(s, c5);
+	char *result2 = ft_strchr(s, c5);
 
-    printf("String: %s\n", s);
-    printf("Caractere: %c\n", c5); // vai imprimir a letra correspondente ao inteiro ascii
-    printf("Resultado (original): %s\n", result1);
-    printf("Resultado (minha versão): %s\n", result2);
+	printf("String: %s\n", s);
+	printf("Caractere: %c\n", c5); // vai imprimir a letra correspondente ao inteiro ascii
+	printf("Resultado (original): %s\n", result1);
+	printf("Resultado (minha versão): %s\n", result2);
 
-    if (result1 == result2) {
-        printf("%sYeah! Os resultados são iguais!%s\n\n", GREEN, RESET);
-    } else {
-        printf("%sOops :( Os resultados são diferentes.%s\n\n", RED, RESET);
-    }
+	if (result1 == result2) {
+		printf("%sYeah! Os resultados são iguais!%s\n\n", GREEN, RESET);
+	} else {
+		printf("%sOops :( Os resultados são diferentes.%s\n\n", RED, RESET);
+	}
 	
 	}
 
@@ -247,12 +255,12 @@ int	main(void)
 	printf("char *ft_strrchr(const char *%s%s%s, int %s%i%s\n\n", CIANO, s5, RESET, CIANO, b5, RESET);
 
 	char *result3 = strrchr(s5, b5);
-    char *result4 = ft_strrchr(s5, b5);
+	char *result4 = ft_strrchr(s5, b5);
 	
 	printf("String: %s\n", s5);
-    printf("Caractere: %c\n", b5); // vai imprimir a letra correspondente ao inteiro ascii
-    printf("Resultado (original): %s\n", result3);
-    printf("Resultado (minha versão): %s\n", result4);
+	printf("Caractere: %c\n", b5); // vai imprimir a letra correspondente ao inteiro ascii
+	printf("Resultado (original): %s\n", result3);
+	printf("Resultado (minha versão): %s\n", result4);
 
 	if (result3 == result4)
 		printf("%sYeah! Os resultados sao iguais!%s\n\n", GREEN, RESET);
@@ -263,51 +271,51 @@ int	main(void)
 	{//ft_strncmp
 	
 	printf("%s\nft_strncmp%s\n", YELLOW, RESET);
-    printf("%sCompara os primeiros n caracteres de duas strings e retorna um valor indicando a ordem lexicográfica%s\n", ITALIC, RESET);
+	printf("%sCompara os primeiros n caracteres de duas strings e retorna um valor indicando a ordem lexicográfica%s\n", ITALIC, RESET);
 
-    const char *s1 = "Bom dia pessoal!";
-    const char *s2 = "\0";
-    size_t n = 1;
+	const char *s1 = "Bom dia pessoal!";
+	const char *s2 = "\0";
+	size_t n = 1;
 
-    printf("int ft_strncmp(const char *%s%s%s, const char *%s%s%s, size_t %s%zu%s\n\n", CIANO, s1, RESET, CIANO, s2, RESET, CIANO, n, RESET);
+	printf("int ft_strncmp(const char *%s%s%s, const char *%s%s%s, size_t %s%zu%s\n\n", CIANO, s1, RESET, CIANO, s2, RESET, CIANO, n, RESET);
 
-    int result1 = strncmp(s1, s2, n);
-    int result2 = ft_strncmp(s1, s2, n);
+	int result1 = strncmp(s1, s2, n);
+	int result2 = ft_strncmp(s1, s2, n);
 
-    printf("String 1: %s\n", s1);
-    printf("String 2: %s\n", s2);
-    printf("Número de caracteres a comparar: %zu\n", n);
-    printf("Resultado (original): %d\n", result1);
-    printf("Resultado (minha versão): %d\n", result2);
+	printf("String 1: %s\n", s1);
+	printf("String 2: %s\n", s2);
+	printf("Número de caracteres a comparar: %zu\n", n);
+	printf("Resultado (original): %d\n", result1);
+	printf("Resultado (minha versão): %d\n", result2);
 
-    if ((result1 > 0 && result2 > 0) || (result1 < 0 && result2 < 0))
-        printf("%sYeah! Os resultados são iguais!%s\n\n", GREEN, RESET);
-    if (result1 == result2)
-        printf("%sOops :( Os resultados são diferentes.%s\n\n", RED, RESET);
+	if ((result1 > 0 && result2 > 0) || (result1 < 0 && result2 < 0))
+		printf("%sYeah! Os resultados são iguais!%s\n\n", GREEN, RESET);
+	if (result1 == result2)
+		printf("%sOops :( Os resultados são diferentes.%s\n\n", RED, RESET);
 	}
 
 	{//ft_memchr
 	const char *string = "Bom dia, malta!";
-    int d1 = 400;
+	int d1 = 400;
 	size_t teste = 8;
 
-    printf("%s\nft_memchr%s\n", YELLOW, RESET);
-    printf("%sProcura pela primeira ocorrência de um byte específico em um bloco de memória e retorna um ponteiro com essa posicao.\n%s", ITALIC, RESET);
-    printf("void *ft_memchr(const void *%s%s%s, int %s%i%s, size_t %s%lu%s)\n\n", CIANO, string, RESET, CIANO, d1, RESET, CIANO, teste, RESET);
-    
-    char *result18 = memchr(string, d1, teste);
-    char *result19 = ft_memchr(string, d1, teste);
+	printf("%s\nft_memchr%s\n", YELLOW, RESET);
+	printf("%sProcura pela primeira ocorrência de um byte específico em um bloco de memória e retorna um ponteiro com essa posicao.\n%s", ITALIC, RESET);
+	printf("void *ft_memchr(const void *%s%s%s, int %s%i%s, size_t %s%lu%s)\n\n", CIANO, string, RESET, CIANO, d1, RESET, CIANO, teste, RESET);
+	
+	char *result18 = memchr(string, d1, teste);
+	char *result19 = ft_memchr(string, d1, teste);
 
-    printf("String: %s\n", string);
-    printf("Caractere: %c\n", d1);
-    printf("Resultado (original): %s\n", result18);
-    printf("Resultado (sua versão): %s\n", result19);
+	printf("String: %s\n", string);
+	printf("Caractere: %c\n", d1);
+	printf("Resultado (original): %s\n", result18);
+	printf("Resultado (sua versão): %s\n", result19);
 
-    if (result18 == result19) {
-        printf("%sOs resultados são iguais!%s\n\n", GREEN, RESET);
-    } else {
-        printf("%sOs resultados são diferentes.%s\n\n", RED, RESET);
-    }
+	if (result18 == result19) {
+		printf("%sOs resultados são iguais!%s\n\n", GREEN, RESET);
+	} else {
+		printf("%sOs resultados são diferentes.%s\n\n", RED, RESET);
+	}
 	}
 
 	{//ft_memcmp
@@ -315,13 +323,13 @@ int	main(void)
 	printf("%sUsada para comparar blocos de memória e determinar se eles são iguais ou diferentes.%s\n", ITALIC, RESET);
 
 	const char *troy = "Troy Bolton";
-    const char *sharpey = "Sharpey Evans";
-    size_t ryan = 5;
+	const char *sharpey = "Sharpey Evans";
+	size_t ryan = 5;
 
- 	printf("int ft_memcmp(const void *%s%s%s, const void *%s%s%s, size_t %s%zu%s\n\n", CIANO, troy, RESET, CIANO, sharpey, RESET, CIANO, ryan, RESET);
+	printf("int ft_memcmp(const void *%s%s%s, const void *%s%s%s, size_t %s%zu%s\n\n", CIANO, troy, RESET, CIANO, sharpey, RESET, CIANO, ryan, RESET);
 
-    int resultado1 = memcmp(troy, sharpey, ryan);
-    int resultado2 = ft_memcmp(troy, sharpey, ryan);
+	int resultado1 = memcmp(troy, sharpey, ryan);
+	int resultado2 = ft_memcmp(troy, sharpey, ryan);
 
 	printf("String 1: %s\n", troy);
 	printf("String 2: %s\n", sharpey); 
@@ -329,9 +337,9 @@ int	main(void)
 	printf("Resultado (minha versão): %d\n", resultado2);
 
 	if (resultado1 == resultado2) {
-    printf("%sYeah! O Ryan aprovaria!%s\n\n", GREEN, RESET);
+	printf("%sYeah! O Ryan aprovaria!%s\n\n", GREEN, RESET);
 	} else {
-    printf("%sOops :( A Sharpey não iria gostar disso.%s\n\n", RED, RESET);
+	printf("%sOops :( A Sharpey não iria gostar disso.%s\n\n", RED, RESET);
 	}
 	}
 
@@ -340,29 +348,29 @@ int	main(void)
 	printf("%sProcura a primeira ocorrência de uma substring em uma string, com um limite máximo de caracteres a serem comparados.%s\n", ITALIC, RESET);
 
 
-    const char *ss1 = "O rato roeu a roupa do rei de Roma";
-    const char *ss2 = "roupa";
-    size_t nn2 = 20;
+	const char *ss1 = "O rato roeu a roupa do rei de Roma";
+	const char *ss2 = "roupa";
+	size_t nn2 = 20;
 
 	printf("char *ft_strnstr(const char *%s%s%s, const char %s%s%s, size_t %s%lu%s)\n\n", CIANO, ss1, RESET, CIANO, ss2, RESET, CIANO, nn2, RESET);
 
-    printf("String 1: %s\n", ss1);
-    printf("String 2: %s\n", ss2);
-    printf("Número de caracteres a procurar: %lu\n", nn2);
+	printf("String 1: %s\n", ss1);
+	printf("String 2: %s\n", ss2);
+	printf("Número de caracteres a procurar: %lu\n", nn2);
 
-    // char *result00 = strnstr(ss1, ss2, nn2);
-    char *result01 = ft_strnstr(ss1, ss2, nn2);
+	// char *result00 = strnstr(ss1, ss2, nn2);
+	char *result01 = ft_strnstr(ss1, ss2, nn2);
 
-    // printf("Resultado (original): %s\n", result00);
-    printf("Resultado (minha versão): %s\n", result01);
+	// printf("Resultado (original): %s\n", result00);
+	printf("Resultado (minha versão): %s\n", result01);
 
-    // if (result00 == NULL && result01 == NULL) {
-    //     printf("%sYeah! Os resultados são iguais!%s\n\n", GREEN, RESET);
-    // } else if (result00 != NULL && result01 != NULL && strcmp(result00, result01) == 0) {
-    //     printf("%sYeah! Os resultados são iguais!%s\n\n", GREEN, RESET);
-    // } else {
-    //     printf("%sOops :( Os resultados são diferentes.%s\n\n", RED, RESET);
-    // }
+	// if (result00 == NULL && result01 == NULL) {
+	//     printf("%sYeah! Os resultados são iguais!%s\n\n", GREEN, RESET);
+	// } else if (result00 != NULL && result01 != NULL && strcmp(result00, result01) == 0) {
+	//     printf("%sYeah! Os resultados são iguais!%s\n\n", GREEN, RESET);
+	// } else {
+	//     printf("%sOops :( Os resultados são diferentes.%s\n\n", RED, RESET);
+	// }
 	}
 
 	{//ft_atoi
@@ -372,24 +380,67 @@ int	main(void)
 	const char *teste500 = "   +2147483648";
 	printf("int	atoi(const char %s%s%s\n\n", CIANO, teste500, RESET);
 	
-    printf("String: %s\n", teste500);
+	printf("String: %s\n", teste500);
 
-    // convertendo a string usando a função ft_atoi
-    int ft_result = ft_atoi(teste500);
+	// convertendo a string usando a função ft_atoi
+	int ft_result = ft_atoi(teste500);
 
-    // convertendo a string usando a função atoi original
-    int original_result = atoi(teste500);
+	// convertendo a string usando a função atoi original
+	int original_result = atoi(teste500);
 
 	printf("Original = %i\n", original_result);
 	printf("Minha Versao = %i\n", ft_result);
 
-    // comparando os resultados
-    if (ft_result == original_result) {
-        printf("%sYeah! Os resultados são iguais!%s\n\n", GREEN, RESET);
-    } else {
-        printf("%sOops :( Os resultados são diferentes.%s\n\n", RED, RESET);
-    }
+	// comparando os resultados
+	if (ft_result == original_result) {
+		printf("%sYeah! Os resultados são iguais!%s\n\n", GREEN, RESET);
+	} else {
+		printf("%sOops :( Os resultados são diferentes.%s\n\n", RED, RESET);
 	}
-	return (0);
+
+}
+}
+
+
+	//PARTE 2
+	if (num == 2){
+	
+	{//ft_substr
+	printf("%s\nft_substr%s\n", YELLOW, RESET);
+	printf("%sAloca e retorna uma substring de uma string original, a partir de um índice inicial e um comprimento máximo.%s\n", ITALIC, RESET);
+
+	char	*str45 = "tripouille";
+	int		start = 1;
+	size_t	str_len = 42000;
+
+	printf("char	*ft_substr(char const %s%s%s, unsigned int %s%i%s, size_t %s%lu%s\n\n", CIANO, str45, RESET, CIANO, start, RESET, CIANO, str_len, RESET);
+
+	printf("String: %s\n", str45);
+	printf("Posicao Inicial: %i\n", start);
+	printf("Número max de caracteres: %lu\n", str_len);
+	printf("Substring: %s\n\n", ft_substr(str45, start, str_len));
+	}
+
+	{//ft_strjoin
+	printf("%s\nft_strjoin%s\n", YELLOW, RESET);
+	printf("%sConcatena duas strings em uma nova string.%s\n", ITALIC, RESET);
+
+	char	*str46 = "EU SOU ";
+	char	*str47 = "JESUS, TUDO BEM?";
+
+	printf("char	*ft_strjoin(const char %s%s%s, const char %s%s%s\n\n", CIANO, str46, RESET, CIANO, str47, RESET);
+
+	printf("String 1: %s\n", str46);
+	printf("String 2: %s\n", str47);
+	printf("Nova String: %s\n\n", ft_strjoin(str46, str47));
+	}
+	
+	}
+
+	else
+		printf("ERROR! You need to insert a number. Try it again :(");
+
+return (0);
+
 }
 
