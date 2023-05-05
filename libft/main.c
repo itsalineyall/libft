@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alinevieira <alinevieira@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 11:12:53 by alvieira          #+#    #+#             */
-/*   Updated: 2023/04/29 23:22:35 by alvieira         ###   ########.fr       */
+/*   Updated: 2023/05/04 19:23:23 by alinevieira      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -435,6 +435,16 @@ int	main(void)
 	printf("Nova String: %s\n\n", ft_strjoin(str46, str47));
 	}
 	
+	{//ft_itoa
+	printf("%s\nft_itoa%s\n", YELLOW, RESET);
+	printf("%sConverte inteiro em uma String%s\n", ITALIC, RESET);
+
+	int num = 7891;
+    char *str = ft_itoa(num);
+    printf("Inteiro: %d\nString: %s\n", num, str);
+
+	}
+
 	}
 
 	else

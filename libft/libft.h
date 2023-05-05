@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alinevieira <alinevieira@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 17:32:02 by alvieira          #+#    #+#             */
-/*   Updated: 2023/04/30 00:40:04 by alvieira         ###   ########.fr       */
+/*   Updated: 2023/05/03 18:49:26 by alinevieira      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ int     ft_atoi(const char *nptr);
 // parte 2
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char    *ft_strjoin(const char *s1, const char *s2);
+char    *ft_itoa(int n);
 
 #endif
