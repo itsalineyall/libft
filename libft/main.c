@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alinevieira <alinevieira@student.42.fr>    +#+  +:+       +#+        */
+/*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 11:12:53 by alvieira          #+#    #+#             */
-/*   Updated: 2023/05/04 19:23:23 by alinevieira      ###   ########.fr       */
+/*   Updated: 2023/05/05 18:02:33 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -439,12 +439,22 @@ int	main(void)
 	printf("%s\nft_itoa%s\n", YELLOW, RESET);
 	printf("%sConverte inteiro em uma String%s\n", ITALIC, RESET);
 
-	int num = 7891;
+	int num = -214783648; // -214783648;
     char *str = ft_itoa(num);
-    printf("Inteiro: %d\nString: %s\n", num, str);
 
+	printf("char	*ft_itoa(int n%s%i%s\n\n", CIANO, num, RESET);
+	
+    printf("Inteiro: %d\nString: %s\n", num, str);
 	}
 
+	{//ft_strmapi
+	printf("%s\nft_strmapi%s\n", YELLOW, RESET);
+	printf("%sMapeia uma string aplicando uma função em cada caractere, retornando uma nova string modificada%s\n", ITALIC, RESET);
+	
+	printf("char	*ft_strjoin(const char %s%s%s, const char %s%s%s\n\n", CIANO, str46, RESET, CIANO, str47, RESET); 
+	
+	}
+	
 	}
 
 	else

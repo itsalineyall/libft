@@ -3,22 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alinevieira <alinevieira@student.42.fr>    +#+  +:+       +#+        */
+/*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:58:58 by alinevieira       #+#    #+#             */
-/*   Updated: 2023/05/04 19:25:52 by alinevieira      ###   ########.fr       */
+/*   Updated: 2023/05/05 15:47:16 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_counter(int	n)
+static int	ft_counter(int n)
 {
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 1;
+	if (n == 0)
+		return (1);
 	if (n < 0)
 	{
 		j = -1;
@@ -35,30 +37,30 @@ static int	ft_counter(int	n)
 		return (i);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-    int len;
-    int i;
-    char    *str;
+	int		len;
+	char	*str;
 
 	len = ft_counter(n);
-    str = (char *)calloc(len + 1, sizeof(char));
-    if (str == NULL)
-        return (NULL);
-	i = len;
+	str = (char *)malloc(sizeof(char) * len + 1);
+	if (str == NULL)
+		return (NULL);
+	else if (n == 0)
+		return (strdup("0"));
+	else if (n == -2147483648)
+		return (strdup("-2147483648"));
 	if (n < 0)
 	{
 		str[0] = '-';
 		n = n * -1;
-		i++;
 	}
+	str[len] = '\0';
 	while (len > 0 && n)
 	{
 		str[len - 1] = (n % 10) + 48;
-		n = n/10;
+		n = n / 10;
 		len--;
 	}
-	str[len + 1] = '\0';
-	
-    return (str);
+	return (str);
 }
