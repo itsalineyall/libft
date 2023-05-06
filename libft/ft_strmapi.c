@@ -6,7 +6,7 @@
 /*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 16:54:32 by alvieira          #+#    #+#             */
-/*   Updated: 2023/05/05 17:52:54 by alvieira         ###   ########.fr       */
+/*   Updated: 2023/05/06 20:54:55 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 // dessa função, permitindo assim modificar cada caractere da
 // string original.
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
 	char			*str;

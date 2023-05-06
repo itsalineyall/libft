@@ -6,15 +6,22 @@
 /*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 11:12:53 by alvieira          #+#    #+#             */
-/*   Updated: 2023/05/05 18:02:33 by alvieira         ###   ########.fr       */
+/*   Updated: 2023/05/06 20:04:55 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+char	ft_tolower2(unsigned int i, char c)
+	{
+		(void)i;
+		if (c >= 'A' && c <= 'Z')
+			c = c + 32;
+		return (c);
+	}
+
 int	main(void)
-{
-	
+{	
 	int	num;
 	printf("Please, insert:\n%s(1)%s for libft part 1\n%s(2)%s for libft part 2\n", CIANO, RESET, CIANO, RESET);
 	scanf("%i", &num);
@@ -445,13 +452,22 @@ int	main(void)
 	printf("char	*ft_itoa(int n%s%i%s\n\n", CIANO, num, RESET);
 	
     printf("Inteiro: %d\nString: %s\n", num, str);
-	}
+	}	
 
 	{//ft_strmapi
 	printf("%s\nft_strmapi%s\n", YELLOW, RESET);
-	printf("%sMapeia uma string aplicando uma função em cada caractere, retornando uma nova string modificada%s\n", ITALIC, RESET);
+	printf("%sMapeia uma string aplicando uma função em cada caractere, retornando uma nova string modificada%s\n\n", ITALIC, RESET);
 	
-	printf("char	*ft_strjoin(const char %s%s%s, const char %s%s%s\n\n", CIANO, str46, RESET, CIANO, str47, RESET); 
+
+	char const	*str88 = strdup("HAKUH FKAH FKJH FKASVBWNWNWMM");
+	char 	*newstr;
+	
+	newstr = ft_strmapi(str88, &ft_tolower2);
+	
+	printf("char	*ft_strmapi(char const *%s%s%s, char %s(*f)(unsigned int, char)%s\n\n", CIANO, str88, RESET, CIANO, RESET);
+
+	printf("String Antiga: %s\n", str88);
+	printf("String Nova: %s\n", newstr);
 	
 	}
 	
