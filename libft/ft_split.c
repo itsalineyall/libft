@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alinevieira <alinevieira@student.42.fr>    +#+  +:+       +#+        */
+/*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 23:31:27 by alvieira          #+#    #+#             */
-/*   Updated: 2023/05/09 10:20:14 by alinevieira      ###   ########.fr       */
+/*   Updated: 2023/05/09 14:40:29 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,18 @@ static int	ft_countwords(char *str, char c)
 
 	i = 0;
 	j = 0;
-	while (str[i] == c)
-		i++;
 	while (str[i] != '\0')
 	{
-		if (str[i] == c)
-		{
-			j = j + 1;
-			if (str[i + 1] == '\0')
-				j = j + 1;
-			while(str[i] == c)
-				i++;
-		}
+		if (str[i] != c && (str[i + 1] == c || str [i + 1] == '\0'))
+			j++;
 		i++;
 	}
 	return (j);
+}
+
+static int	ft_countlen(char *s, char c)
+{
+	
 }
 
 char	**ft_split(char const *s, char c)
@@ -57,16 +54,16 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	while(s[i] != '\0')
 		i++;
-	array = (char **)malloc(sizeof(char *) * XXXX) + 1;
+	array = (char **)malloc(sizeof(char *) * ft_countwords(s, c)) + 1;
 	if (array == NULL || s == NULL)
 		return (NULL);
 	j = 0;
 	start = i;
 	while(s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (s[i] != c)
 		{
-			
+			array[j] = 
 		}
 		i++;
 	}
