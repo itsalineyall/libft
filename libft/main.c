@@ -6,7 +6,7 @@
 /*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 11:12:53 by alvieira          #+#    #+#             */
-/*   Updated: 2023/05/06 20:04:55 by alvieira         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:22:39 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -471,12 +471,30 @@ int	main(void)
 	
 	}
 	
+	{//ft_split
+	printf("%s\nft_split%s\n", YELLOW, RESET);
+	printf("%sSepara uma string em substrings com base em um delimitador especificado e retorna um array contendo essas substrings.%s\n", ITALIC, RESET);
+	
+
+	char const	*str31 = "      ola tudo  bem chato";
+	char 	**array_str = ft_split(str31, ' ');
+	int j = 0;
+
+	printf("char	*ft_split((char const %s%s%s, char %s'%c'%s)\n\n", CIANO, str31, RESET, CIANO, ' ', RESET);
+	printf("Array de Strings:\n");
+	
+	while(array_str[j])
+	{
+		printf("%s\n", array_str[j]);
+		j++;
 	}
 
+	}
+	
+	}
 	else
 		printf("ERROR! You need to insert a number. Try it again :(");
 
 return (0);
 
 }
-

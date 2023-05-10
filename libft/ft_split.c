@@ -6,7 +6,7 @@
 /*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 23:31:27 by alvieira          #+#    #+#             */
-/*   Updated: 2023/05/09 14:40:29 by alvieira         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:58:29 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 // para finalizar o array de strings. Se ocorrer algum erro na alocação
 // de memória, a função retorna NULL.
 
-static int	ft_countwords(char *str, char c)
+static int	ft_countwords(char const *str, char c)
 {
 	int	j;
 	int	i;
@@ -38,82 +38,20 @@ static int	ft_countwords(char *str, char c)
 	return (j);
 }
 
-static int	ft_countlen(char *s, char c)
+static char	*ft_wordcpy(char const *s, char c)
 {
-	
-}
-
-char	**ft_split(char const *s, char c)
-{
-	int	i;
-	int	j;
-	int start;
-	int	len;
-	char	**array;
-
-	i = 0;
-	while(s[i] != '\0')
-		i++;
-	array = (char **)malloc(sizeof(char *) * ft_countwords(s, c)) + 1;
-	if (array == NULL || s == NULL)
-		return (NULL);
-	j = 0;
-	start = i;
-	while(s[i] != '\0')
-	{
-		if (s[i] != c)
-		{
-			array[j] = 
-		}
-		i++;
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-static int	ft_count_words(const char *s, char c)
-{
-	int	i;
-	int	words;
-
-	i = 0;
-	words = 0;
-	while (s[i])
-	{
-		if (s[i] != c)
-		{
-			words++;
-			while (s[i] && s[i] != c)
-				i++;
-		}	
-		else
-			i++;
-	}
-	return (words);
-}
-
-static char	*word_splitter(const char *s, char c)
-{
-	char	*word;
 	int		i;
+	char	*word;
+	int		len;
 
 	i = 0;
-	while (s[i] && s[i] != c)
-		i++;
-	word = (char *) malloc(sizeof(char) * (i + 1));
-	if (!word)
+	len = 0;
+	while (s[len] != '\0' && s[len] != c)
+		len++;
+	word = (char *)malloc(sizeof(char) * (len + 1));
+	if (word == NULL)
 		return (NULL);
-	i = 0;
-	while (s[i] && s[i] != c)
+	while (s[i] != c && s[i] != '\0')
 	{
 		word[i] = s[i];
 		i++;
@@ -126,25 +64,25 @@ char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
-	char	**words;
+	char	**array;
 
 	i = 0;
-	j = 0;
-	words = (char **) malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
-	if (!words || !s)
+	array = (char **)malloc(sizeof(char *) * (ft_countwords(s, c) + 1));
+	if (array == NULL || s == NULL)
 		return (NULL);
-	while (s[i])
+	j = 0;
+	while (s[i] != '\0')
 	{
 		if (s[i] != c)
 		{
-			words[j] = word_splitter(&s[i], c);
-			while (s[i] && s[i] != c)
+			array[j] = ft_wordcpy(&s[i], c);
+			while (s[i] != '\0' && s[i] != c)
 				i++;
 			j++;
 		}
 		else
 			i++;
 	}
-	words[j] = 0;
-	return (words);
+	array[j] = 0;
+	return (array);
 }
