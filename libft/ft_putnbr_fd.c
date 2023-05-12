@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 22:45:03 by alinevieira       #+#    #+#             */
-/*   Updated: 2023/05/12 23:02:33 by alvieira         ###   ########.fr       */
+/*   Created: 2023/05/12 20:31:39 by alvieira          #+#    #+#             */
+/*   Updated: 2023/05/12 22:59:40 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// A função ft_putstr_fd é responsável por escrever uma string em
-// um descritor de arquivo especificado. Ela utiliza a função
-// write para realizar a operação de escrita. O resultado é a
-// exibição da string no local associado ao descritor de
-// arquivo, como a saída padrão (stdout) quando o fd é igual a 1.
+// A função ft_putnbr_fd é uma função em C que imprime um
+// número inteiro em um arquivo especificado.
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int	i;
+	long int	nb;
 
-	i = 0;
-	while (s[i])
+	nb = n;
+	if (nb < 0)
 	{
-		write(fd, &s[i], 1);
-		i++;
+		ft_putchar_fd('-', fd);
+		nb = nb * -1;
 	}
+	if (nb > 9)
+	{
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putnbr_fd(nb % 10, fd);
+	}
+	else
+		ft_putchar_fd(nb + 48, fd);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alinevieira <alinevieira@student.42.fr>    +#+  +:+       +#+        */
+/*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 22:16:08 by alinevieira       #+#    #+#             */
-/*   Updated: 2023/05/11 23:28:19 by alinevieira      ###   ########.fr       */
+/*   Updated: 2023/05/12 22:57:37 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 // gravar caracteres em um local determinado, como um arquivo de saída, em vez
 // de exibir na saída padrão.
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-    write(fd, &c, 1);
+	write(fd, &c, 1);
 }

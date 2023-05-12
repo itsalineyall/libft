@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 22:45:03 by alinevieira       #+#    #+#             */
-/*   Updated: 2023/05/12 23:02:33 by alvieira         ###   ########.fr       */
+/*   Created: 2023/05/12 22:31:30 by alvieira          #+#    #+#             */
+/*   Updated: 2023/05/12 23:04:19 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// A função ft_putstr_fd é responsável por escrever uma string em
-// um descritor de arquivo especificado. Ela utiliza a função
-// write para realizar a operação de escrita. O resultado é a
-// exibição da string no local associado ao descritor de
-// arquivo, como a saída padrão (stdout) quando o fd é igual a 1.
-
-void	ft_putstr_fd(char *s, int fd)
+char	*ft_strdup(const char *s)
 {
-	int	i;
+	char	*ptr;
+	int		i;
 
+	ptr = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (ptr == NULL)
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{
-		write(fd, &s[i], 1);
+		ptr[i] = s[i];
 		i++;
 	}
+	ptr[i] = '\0';
+	return (ptr);
 }

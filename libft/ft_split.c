@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alinevieira <alinevieira@student.42.fr>    +#+  +:+       +#+        */
+/*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 23:31:27 by alvieira          #+#    #+#             */
-/*   Updated: 2023/05/11 01:45:40 by alinevieira      ###   ########.fr       */
+/*   Updated: 2023/05/12 23:03:09 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
-	char	**array; 
+	char	**array;
 
 	i = 0;
 	array = (char **)malloc(sizeof(char *) * (ft_countwords(s, c) + 1));

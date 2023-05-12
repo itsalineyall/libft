@@ -6,7 +6,7 @@
 /*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 17:35:39 by alvieira          #+#    #+#             */
-/*   Updated: 2023/04/29 22:26:04 by alvieira         ###   ########.fr       */
+/*   Updated: 2023/05/12 23:13:57 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,17 @@
 //programas e está presente em muitas linguagens
 //de programação.
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
-	size_t		i;
-	
+	size_t	i;
+
 	if (s == NULL)
 		return (NULL);
 	if (start >= (unsigned int)ft_strlen(s))
 	{
-		sub = (char *)malloc(1);
-		if (sub == NULL)
-			return (NULL);
-		sub[0] = '\0';
-			return (sub);
+		sub = ft_strdup("");
+		return (sub);
 	}
 	if (len > (size_t)ft_strlen(s) - (size_t)start)
 		len = (size_t)ft_strlen(s) - (size_t)start;
@@ -47,8 +44,5 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 		i++;
 	}
 	sub[i] = '\0';
-	return(sub);
+	return (sub);
 }
-
-
-

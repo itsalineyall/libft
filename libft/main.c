@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alinevieira <alinevieira@student.42.fr>    +#+  +:+       +#+        */
+/*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 11:12:53 by alvieira          #+#    #+#             */
-/*   Updated: 2023/05/12 01:39:43 by alinevieira      ###   ########.fr       */
+/*   Updated: 2023/05/12 22:53:51 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -406,6 +406,53 @@ int	main(void)
 	}
 
 }
+
+	{//ft_calloc
+	printf("%s\nft_calloc%s\n", YELLOW, RESET);
+	printf("%sAloca e inicializa um bloco de memória com zeros, retornando um ponteiro para essa região de memória.%s\n", ITALIC, RESET);
+
+	size_t num = 5;
+
+	printf("void *ft_calloc(size_t %s%lu%s, size_t %s(sizeof)%s)\n\n", CIANO, num, RESET, CIANO, RESET);
+
+	char *arr;
+	char *arr2;
+
+	arr = ft_calloc(num, sizeof(char));
+	arr2 = calloc(num, sizeof(char));
+
+	if (arr == arr2) {
+		printf("%sYeah! Os resultados são iguais!%s\n\n", GREEN, RESET);
+	} else {
+		printf("%sOops :( Os resultados são diferentes.%s\n\n", RED, RESET);
+	}
+	}
+
+	{//ft_strdup
+	printf("%s\nft_strdup%s\n", YELLOW, RESET);
+	printf("%sUsada para copiar uma string. Retorna um ponteiro.%s\n", ITALIC, RESET);
+
+	const char *originalString = "Hello, world!";
+    char *copiedString;
+	char *copiedString2;
+
+	printf("char *ft_strdup(const char %s%s%s)\n\n", CIANO, originalString, RESET);
+
+	printf("String Original: %s\n", originalString);
+
+    copiedString = strdup(originalString);
+	copiedString2 = ft_strdup(originalString);
+
+    printf("Cópia da string (Original): %s\n", copiedString);
+	printf("Cópia da string (Minha): %s\n", copiedString2);
+
+	if (strcmp(copiedString, copiedString2) == 0) {
+	printf("%sYeah! Os resultados sao iguais!%s\n\n", GREEN, RESET);
+	} else {
+	printf("%sOops :( Os resultados sao diferentes :(%s\n\n", RED, RESET);
+	}
+	}
+
 }
 
 
@@ -531,6 +578,38 @@ int	main(void)
 
 	printf("Result:\n");
 	ft_putstr_fd(chh, fds);
+	printf("\n");
+
+	}
+
+	{//ft_putendl_fd
+	printf("%s\nft_putendl_fd%s\n", YELLOW, RESET);
+	printf("%simprime uma string seguida por uma nova linha em um arquivo especificado%s\n", ITALIC, RESET);
+	
+
+	char	*chhs = "Hello World!";
+	int		fdss = 1;
+	
+	printf("void ft_putendl_fd(char %s%s%s, int %s%i%s)\n\n", CIANO, chhs, RESET, CIANO, fdss, RESET);
+
+	printf("Result:\n");
+	ft_putstr_fd(chhs, fdss);
+	printf(".");
+
+	}
+
+	{//ft_putnbr_fd
+	printf("%s\nft_putnbr_fd%s\n", YELLOW, RESET);
+	printf("%sImprime um número inteiro em um descritor de arquivo especificado.%s\n", ITALIC, RESET);
+	
+
+	int		fdh = 1;
+	int		nb = -2147483648;
+	
+	printf("void ft_putnbr_fd(int %s%i%s, int %s%i%s)\n\n", CIANO, nb, RESET, CIANO, fdh, RESET);
+
+	printf("Result:\n");
+	ft_putnbr_fd(nb, fdh);
 	printf("\n");
 
 	}

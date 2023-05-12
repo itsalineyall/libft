@@ -6,7 +6,7 @@
 /*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:58:58 by alinevieira       #+#    #+#             */
-/*   Updated: 2023/05/05 15:47:16 by alvieira         ###   ########.fr       */
+/*   Updated: 2023/05/12 23:17:48 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ char	*ft_itoa(int n)
 	if (str == NULL)
 		return (NULL);
 	else if (n == 0)
-		return (strdup("0"));
+		return (ft_strdup("0"));
 	else if (n == -2147483648)
-		return (strdup("-2147483648"));
+		return (ft_strdup("-2147483648"));
 	if (n < 0)
 	{
 		str[0] = '-';
