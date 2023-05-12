@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alinevieira <alinevieira@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 11:12:53 by alvieira          #+#    #+#             */
-/*   Updated: 2023/05/10 16:22:39 by alvieira         ###   ########.fr       */
+/*   Updated: 2023/05/12 01:39:43 by alinevieira      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -491,6 +491,50 @@ int	main(void)
 
 	}
 	
+	{//ft_striteri
+	printf("%s\nft_striteri%s\n", YELLOW, RESET);
+	printf("%sItera sobre uma string e aplica uma função de modificação a cada caractere, utilizando o índice como argumento%s\n", ITALIC, RESET);
+	
+
+	char	*str70 = "Hello Mundo! Eu estou bem";
+	
+	printf("char	*ft_striteri(char *%s%s%s, char *%s(*f)(unsigned int, char)%s\n\n", CIANO, str70, RESET, CIANO, RESET);
+
+	printf("I don't know how to make the test :(\n");
+	}
+	
+	{//ft_putchar_fd
+	printf("%s\nft_putchar_fd%s\n", YELLOW, RESET);
+	printf("%sEscreve um caractere em um descritor de arquivo especificado, resultando na exibição do caractere no local associado%s\n", ITALIC, RESET);
+	
+
+	char	ch = 'A';
+	int		fd = 1;
+	
+	printf("void ft_putchar_fd(char %s%c%s, int %s%i%s)\n\n", CIANO, ch, RESET, CIANO, fd, RESET);
+
+	printf("Result:\n");
+	ft_putchar_fd(ch, fd);
+	printf("\n");
+
+	}
+
+	{//ft_putstr_fd
+	printf("%s\nft_putstr_fd%s\n", YELLOW, RESET);
+	printf("%sEscreve uma string em um descritor de arquivo especificado, resultando na exibição da string no local associado%s\n", ITALIC, RESET);
+	
+
+	char	*chh = "Hello World!";
+	int		fds = 1;
+	
+	printf("void ft_putstr_fd(char %s%s%s, int %s%i%s)\n\n", CIANO, chh, RESET, CIANO, fds, RESET);
+
+	printf("Result:\n");
+	ft_putstr_fd(chh, fds);
+	printf("\n");
+
+	}
+
 	}
 	else
 		printf("ERROR! You need to insert a number. Try it again :(");
