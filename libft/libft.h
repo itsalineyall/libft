@@ -6,7 +6,7 @@
 /*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 17:32:02 by alvieira          #+#    #+#             */
-/*   Updated: 2023/05/12 23:16:22 by alvieira         ###   ########.fr       */
+/*   Updated: 2023/05/14 01:38:03 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@
 # define GREEN "\033[32m" // vai deixar verde
 # define RED "\033[31m" // vai deixar vermelho
 # define CIANO "\033[36m" // vai deixar ciano
+
+typedef struct      s_list
+{
+    void			*content;
+    struct s_list   *next;
+}                   t_list;
 
 // parte 1
 size_t	ft_strlen(const char *str);
@@ -64,5 +70,8 @@ void    ft_putchar_fd(char c, int fd);
 void    ft_putstr_fd(char *s, int fd);
 void    ft_putendl_fd(char *s, int fd);
 void    ft_putnbr_fd(int n, int fd);
+
+// bonus
+t_list  *ft_lstnew(void *content);
 
 #endif

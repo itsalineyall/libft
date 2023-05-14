@@ -6,7 +6,7 @@
 /*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 11:12:53 by alvieira          #+#    #+#             */
-/*   Updated: 2023/05/12 22:53:51 by alvieira         ###   ########.fr       */
+/*   Updated: 2023/05/14 01:53:13 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -615,6 +615,36 @@ int	main(void)
 	}
 
 	}
+	
+	//PARTE 3
+	if (num == 3){
+	
+	{//ft_lstnew
+	printf("%s\nft_lstnew%s\n", YELLOW, RESET);
+	printf("%sAloca memória e cria um novo nó para uma lista encadeada%s\n", ITALIC, RESET);
+	
+	printf("t_list *ft_lstnew(void *content)\n\n");
+
+	int *data = (int*)malloc(sizeof(int));
+    *data = 42;
+    t_list *new_node = ft_lstnew(data);
+
+    // Verificando se o novo nó foi criado corretamente
+    if (new_node != NULL)
+    {
+        // Acessando o conteúdo do nó e exibindo na saída padrão
+        int *content = (int*)new_node->content;
+        printf("Content: %d\n", *content);
+        printf("Next: %p\n", new_node->next);
+    }
+
+    // Liberando a memória alocada
+    free(data);
+    free(new_node);
+
+	}
+	}
+	
 	else
 		printf("ERROR! You need to insert a number. Try it again :(");
 
