@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alinevieira <alinevieira@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 11:12:53 by alvieira          #+#    #+#             */
-/*   Updated: 2023/05/14 01:53:13 by alvieira         ###   ########.fr       */
+/*   Updated: 2023/05/15 20:11:54 by alinevieira      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -616,7 +616,7 @@ int	main(void)
 
 	}
 	
-	//PARTE 3
+	//BONUS
 	if (num == 3){
 	
 	{//ft_lstnew
@@ -641,6 +641,22 @@ int	main(void)
     // Liberando a memória alocada
     free(data);
     free(new_node);
+
+	}
+
+	{//ft_lstadd_front 
+	printf("%s\nft_lstadd_front%s\n", YELLOW, RESET); 
+	printf("%sAdiciona um elemento no inicio da lista%s\n", ITALIC, RESET);
+	
+	printf("void ft_lstadd_front(t_list **lst, t_list *new)\n\n");
+
+	t_list	*head = NULL;
+	int		*node1 = (int *)malloc(sizeof(int));
+	
+	
+	head = (t_list *)malloc(sizeof(t_list));
+	
+	
 
 	}
 	}

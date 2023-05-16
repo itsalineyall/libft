@@ -11,7 +11,7 @@ PART2 = ft_itoa.c ft_strjoin.c ft_split.c ft_striteri.c ft_strmapi.c \
 		ft_putnbr_fd.c
 
 SRC = ${PART1} ${PART2}
-SRCB = ft_lstnew.c
+SRCB = ft_lstnew.c ft_lstadd_front.c
 
 OBJS = ${SRC:.c=.o}
 BONUS_OBJS = ${SRCB:.c=.o}
