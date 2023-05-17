@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alinevieira <alinevieira@student.42.fr>    +#+  +:+       +#+        */
+/*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 11:12:53 by alvieira          #+#    #+#             */
-/*   Updated: 2023/05/15 20:11:54 by alinevieira      ###   ########.fr       */
+/*   Updated: 2023/05/17 18:15:53 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -644,21 +644,42 @@ int	main(void)
 
 	}
 
-	{//ft_lstadd_front 
-	printf("%s\nft_lstadd_front%s\n", YELLOW, RESET); 
-	printf("%sAdiciona um elemento no inicio da lista%s\n", ITALIC, RESET);
+	// {//ft_lstadd_front 
+	// printf("%s\nft_lstadd_front%s\n", YELLOW, RESET); 
+	// printf("%sAdiciona um elemento no inicio da lista%s\n", ITALIC, RESET);
 	
-	printf("void ft_lstadd_front(t_list **lst, t_list *new)\n\n");
+	// printf("void ft_lstadd_front(t_list **lst, t_list *new)\n\n");
 
-	t_list	*head = NULL;
-	int		*node1 = (int *)malloc(sizeof(int));
-	
-	
-	head = (t_list *)malloc(sizeof(t_list));
-	
+	// t_list	*head = (t_list)malloc(sizeof(t_list));
+	// t_list *nd1, *nd2, *nd3;
+	// int		*dt1, *dt2, *dt3;
+
+	// dt1 = 11;
+	// dt2 = 12;
+	// dt3 = 13;
+
+	// head = &nd1;
+
+	// nd1 = t_list(malloc(sizeof(t_list)));
+	// nd1->content = dt1;
+	// nd1->next = &nd2;
+
+	// nd2 = t_list(malloc(sizeof(t_list)));
+	// nd2->content = dt2;
+	// nd2->next = &dt3;
+
+	// nd3 = t_list(malloc(sizeof(t_list)));
+	// nd3->content = dt3;
+	// nd3->next = NULL;
+
 	
 
-	}
+	// int i = 0;
+
+	// while ()
+
+
+	// }
 	}
 	
 	else

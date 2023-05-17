@@ -43,9 +43,7 @@ tclean: clean
 
 re: fclean all
 
-bonus: 
-
 teste: re
-	${COMP} ${FLAGS} ${INCLUDE} main.c ${NAME} -o libft
+	${COMP} ${FLAGS} ${INCLUDE} main.c ${NAME} -o libft ${BONUS_OBJS}
 
-.PHONY: all clean fclean tclean re teste
+.PHONY: all bonus clean fclean tclean re teste

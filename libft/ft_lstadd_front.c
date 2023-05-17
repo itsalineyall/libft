@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alinevieira <alinevieira@student.42.fr>    +#+  +:+       +#+        */
+/*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 17:42:33 by alvieira          #+#    #+#             */
-/*   Updated: 2023/05/15 17:37:30 by alinevieira      ###   ########.fr       */
+/*   Updated: 2023/05/17 02:17:25 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

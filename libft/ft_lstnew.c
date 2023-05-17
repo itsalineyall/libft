@@ -6,13 +6,13 @@
 /*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 01:16:33 by alvieira          #+#    #+#             */
-/*   Updated: 2023/05/14 01:32:21 by alvieira         ###   ########.fr       */
+/*   Updated: 2023/05/17 02:15:08 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+t_list  *ft_lstnew(void *content)
 {
     t_list  *newnode;
 
