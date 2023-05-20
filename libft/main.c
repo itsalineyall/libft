@@ -6,11 +6,19 @@
 /*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 11:12:53 by alvieira          #+#    #+#             */
-/*   Updated: 2023/05/17 18:15:53 by alvieira         ###   ########.fr       */
+/*   Updated: 2023/05/20 18:28:39 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+# define YELLOW "\033[1;33m" // vai negrito tbm
+# define RESET "\033[0m" // vai resetar para a cor original
+# define ITALIC "\033[3m\033[36m" // vai deixar italico e azul
+# define BLUE "\033[0;34m" // vai deixar azul
+# define GREEN "\033[32m" // vai deixar verde
+# define RED "\033[31m" // vai deixar vermelho
+# define CIANO "\033[36m" // vai deixar ciano
 
 char	ft_tolower2(unsigned int i, char c)
 	{
@@ -23,7 +31,7 @@ char	ft_tolower2(unsigned int i, char c)
 int	main(void)
 {	
 	int	num;
-	printf("Please, insert:\n%s(1)%s for libft part 1\n%s(2)%s for libft part 2\n", CIANO, RESET, CIANO, RESET);
+	printf("Please, insert:\n%s(1)%s for libft part 1\n%s(2)%s for libft part 2\n%s(3)%s for libft bonus\n", CIANO, RESET, CIANO, RESET, CIANO, RESET);
 	scanf("%i", &num);
 
 	//PARTE 1
@@ -622,8 +630,6 @@ int	main(void)
 	{//ft_lstnew
 	printf("%s\nft_lstnew%s\n", YELLOW, RESET);
 	printf("%sAloca memória e cria um novo nó para uma lista encadeada%s\n", ITALIC, RESET);
-	
-	printf("t_list *ft_lstnew(void *content)\n\n");
 
 	int *data = (int*)malloc(sizeof(int));
     *data = 42;
@@ -644,42 +650,166 @@ int	main(void)
 
 	}
 
-	// {//ft_lstadd_front 
-	// printf("%s\nft_lstadd_front%s\n", YELLOW, RESET); 
-	// printf("%sAdiciona um elemento no inicio da lista%s\n", ITALIC, RESET);
+	{//ft_lstadd_front 
+	printf("%s\nft_lstadd_front%s\n", YELLOW, RESET); 
+	printf("%sAdiciona um elemento no inicio da lista%s\n\n", ITALIC, RESET);
+
+	// Criação da lista inicialmente vazia
+    t_list *lista = NULL;
+
+    // Criação dos nós
+    t_list *gato1 = (t_list *)malloc(sizeof(t_list));
+    t_list *gato2 = (t_list *)malloc(sizeof(t_list));
+    t_list *gato3 = (t_list *)malloc(sizeof(t_list));
+
+    gato1->content = "Gato 1";
+    gato1->next = NULL;
+    gato2->content = "Gato 2";
+    gato2->next = NULL;
+    gato3->content = "Gato 3";
+    gato3->next = NULL;
+
+    // Adicionando nós na frente da lista
+    ft_lstadd_front(&lista, gato3);
+    ft_lstadd_front(&lista, gato2);
+    ft_lstadd_front(&lista, gato1);
+
+    // Verificando se a lista está vazia
+    if (lista == NULL)
+    {
+        printf("A lista está vazia.\n");
+    }
+    else
+    {
+        // Percorrendo a lista e imprimindo o conteúdo dos nós
+        t_list *current = lista;
+        while (current != NULL)
+        {
+            printf("Conteúdo: %s\n", (char *)(current->content));
+            current = current->next;
+        }
+    }
+
+    // Liberando a memória alocada
+    free(gato1);
+    free(gato2);
+    free(gato3);
+
+	}
+
+	{//ft_lstsize
+	printf("%s\nft_lstsize%s\n", YELLOW, RESET); 
+	printf("%sConta o número de nós em uma lista encadeada.%s\n\n", ITALIC, RESET);
+	// Criação da lista
+    t_list *node1 = (t_list *)malloc(sizeof(t_list));
+    t_list *node2 = (t_list *)malloc(sizeof(t_list));
+    t_list *node3 = (t_list *)malloc(sizeof(t_list));
+
+    node1->content = "Node 1";
+    node1->next = node2;
+    node2->content = "Node 2";
+    node2->next = node3;
+    node3->content = "Node 3";
+    node3->next = NULL;
+
+    // Chamada da função ft_lstsize
+    int size = ft_lstsize(node1);
+    
+    // Exibindo o resultado na saída padrão
+    printf("Tamanho da lista: %d\n", size);
+
+    // Liberando a memória alocada
+    free(node1);
+    free(node2);
+    free(node3);
+
+
 	
-	// printf("void ft_lstadd_front(t_list **lst, t_list *new)\n\n");
-
-	// t_list	*head = (t_list)malloc(sizeof(t_list));
-	// t_list *nd1, *nd2, *nd3;
-	// int		*dt1, *dt2, *dt3;
-
-	// dt1 = 11;
-	// dt2 = 12;
-	// dt3 = 13;
-
-	// head = &nd1;
-
-	// nd1 = t_list(malloc(sizeof(t_list)));
-	// nd1->content = dt1;
-	// nd1->next = &nd2;
-
-	// nd2 = t_list(malloc(sizeof(t_list)));
-	// nd2->content = dt2;
-	// nd2->next = &dt3;
-
-	// nd3 = t_list(malloc(sizeof(t_list)));
-	// nd3->content = dt3;
-	// nd3->next = NULL;
-
+	}
 	
+	{//ft_lstlast
+	printf("%s\nft_lstlast%s\n", YELLOW, RESET); 
+	printf("%sA função ft_lstlast retorna o último nó de uma lista encadeada.%s\n\n", ITALIC, RESET);
+	
+	// Criação da lista
+    t_list *zavi = NULL;
 
-	// int i = 0;
+    // Criação dos nós
+    t_list *dog1 = (t_list *)malloc(sizeof(t_list));
+    t_list *dog2 = (t_list *)malloc(sizeof(t_list));
+    t_list *dog3 = (t_list *)malloc(sizeof(t_list));
 
-	// while ()
+    dog1->content = "Dog 1";
+    dog1->next = NULL;
+    dog2->content = "Dog 2";
+    dog2->next = NULL;
+    dog3->content = "Dog 3";
+    dog3->next = NULL;
+
+    // Adicionando nós na lista
+    zavi = dog1;
+    dog1->next = dog2;
+    dog2->next = dog3;
+
+    // Obtendo o último nó
+    t_list *ultimoNo = ft_lstlast(zavi);
+
+    if (ultimoNo != NULL)
+    {
+        printf("Conteúdo do último nó: %s\n\n", (char *)(ultimoNo->content));
+    }
+    else
+    {
+        printf("A lista está vazia.\n");
+    }
+
+    // Liberando a memória alocada
+    free(dog1);
+    free(dog2);
+    free(dog3);
 
 
-	// }
+	}
+	
+	{//ft_lstadd_back
+	printf("%s\nft_lstadd_back%s\n", YELLOW, RESET); 
+	printf("%sA função ft_lstadd_back adiciona um novo nó ao final de uma lista encadeada.%s\n\n", ITALIC, RESET);
+
+	// Criação da lista vazia
+    t_list *lista = NULL;
+
+    // Criação dos nós
+    t_list *bird1 = (t_list *)malloc(sizeof(t_list));
+    t_list *bird2 = (t_list *)malloc(sizeof(t_list));
+    t_list *bird3 = (t_list *)malloc(sizeof(t_list));
+
+    bird1->content = "Bird 1";
+    bird1->next = NULL;
+    bird2->content = "Bird 2";
+    bird2->next = NULL;
+    bird3->content = "Bird 3";
+    bird3->next = NULL;
+
+    // Adicionando nós na lista usando ft_lstadd_back
+    ft_lstadd_back(&lista, bird1);
+    ft_lstadd_back(&lista, bird2);
+    ft_lstadd_back(&lista, bird3);
+
+    // Impressão do conteúdo dos nós na lista
+    t_list *node = lista;
+    while (node != NULL)
+    {
+        printf("Conteúdo do nó: %s\n", (char *)(node->content));
+        node = node->next;
+    }
+
+    // Liberando a memória alocada
+    free(bird1);
+    free(bird2);
+    free(bird3);
+	
+	
+	}
 	}
 	
 	else
