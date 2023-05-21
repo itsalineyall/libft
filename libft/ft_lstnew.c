@@ -6,11 +6,13 @@
 /*   By: alvieira <alvieira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/14 01:16:33 by alvieira          #+#    #+#             */
-/*   Updated: 2023/05/19 13:59:32 by alvieira         ###   ########.fr       */
+/*   Updated: 2023/05/21 23:02:23 by alvieira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft.h"\
+
+// essa funcao cria um novo elemento da lista
 
 t_list	*ft_lstnew(void *content)
 {

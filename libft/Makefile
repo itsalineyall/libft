@@ -12,7 +12,7 @@ PART2 = ft_itoa.c ft_strjoin.c ft_split.c ft_striteri.c ft_strmapi.c \
 
 SRC = ${PART1} ${PART2}
 SRCB = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-		ft_lstdelone.c ft_lstclear.c ft_lstiter.c 
+		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 		 
 
 OBJS = ${SRC:.c=.o}
@@ -35,17 +35,11 @@ bonus:	${OBJS} ${BONUS_OBJS}
 	ar rcs ${NAME} ${OBJS} ${BONUS_OBJS}
 
 clean:
-	${RM} ${OBJS}
+	${RM} ${OBJS} ${BONUS_OBJS}
 
 fclean: clean
-	${RM} ${NAME} rm teste
-
-tclean: clean
-	${RM} teste
+	${RM} ${NAME} rm 
 
 re: fclean all
 
-teste: re
-	${COMP} ${FLAGS} ${INCLUDE} main.c ${NAME} -o libft ${BONUS_OBJS}
-
-.PHONY: all bonus clean fclean tclean re teste
+.PHONY: all bonus clean fclean tclean re
