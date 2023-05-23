@@ -1,6 +1,7 @@
 # libft
 
 Welcome to libft, a custom C library developed as part of the curriculum at 42. This library contains a collection of useful functions written in C that you can utilize in your own projects. Additionally, it includes a powerful implementation of a linked list data structure.
+
 Table of Contents
 
     Introduction
