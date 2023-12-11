@@ -26,7 +26,3 @@ The libft library provides a wide range of functions, categorized as follows:
     Additional Utilities: Additional useful functions for various purposes.
 
 In addition to the standard library functions, libft also includes a robust implementation of a linked list. This data structure allows you to efficiently store and manipulate collections of data. The linked list functions provided by libft enable you to perform operations such as insertion, deletion, searching, and traversal.
-
-Thank you for choosing libft! We hope this library proves to be a valuable asset in your future projects. If you have any questions or encounter any issues, please don't hesitate to reach out to us.
-
-Happy coding!
